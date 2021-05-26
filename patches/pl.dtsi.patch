@@ -1,0 +1,29 @@
+--- custom_dt/pl.dtsi	2021-05-25 16:38:45.670869656 +0000
++++ custom_dt_original/pl.dtsi	2021-05-25 16:34:17.006079378 +0000
+@@ -14,7 +14,7 @@
+ 		mygpio_0: mygpio@43c00000 {
+ 			clock-names = "s00_axi_aclk";
+ 			clocks = <&clkc 15>;
+-			compatible = "xlnx,mygpio-1.0";
++			compatible = "generic-uio";
+ 			interrupt-names = "interrupt";
+ 			interrupt-parent = <&intc>;
+ 			interrupts = <0 31 4>;
+@@ -25,7 +25,7 @@
+ 		mygpio_1: mygpio@43c10000 {
+ 			clock-names = "s00_axi_aclk";
+ 			clocks = <&clkc 15>;
+-			compatible = "xlnx,mygpio-1.0";
++			compatible = "generic-uio";
+ 			interrupt-names = "interrupt";
+ 			interrupt-parent = <&intc>;
+ 			interrupts = <0 30 4>;
+@@ -36,7 +36,7 @@
+ 		mygpio_2: mygpio@43c20000 {
+ 			clock-names = "s00_axi_aclk";
+ 			clocks = <&clkc 15>;
+-			compatible = "xlnx,mygpio-1.0";
++			compatible = "generic-uio";
+ 			interrupt-names = "interrupt";
+ 			interrupt-parent = <&intc>;
+ 			interrupts = <0 29 4>;

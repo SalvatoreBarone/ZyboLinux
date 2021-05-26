@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]z7_fsbl/Debug/z7_fsbl.elf
+	design_1_wrapper.bit
+	u-boot-digilent/u-boot.elf
+}

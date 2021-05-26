@@ -1,0 +1,20 @@
+--- u-boot-digilent_original/include/configs/zynq-common.h	2021-05-25 15:27:40.534890425 +0200
++++ u-boot-digilent/include/configs/zynq-common.h	2021-05-25 15:35:58.537234919 +0200
+@@ -204,7 +204,6 @@
+ 	"ethaddr=00:0a:35:00:01:22\0"	\
+ 	"kernel_image=uImage\0"	\
+ 	"kernel_load_address=0x2080000\0" \
+-	"ramdisk_image=uramdisk.image.gz\0"	\
+ 	"ramdisk_load_address=0x4000000\0"	\
+ 	"devicetree_image=devicetree.dtb\0"	\
+ 	"devicetree_load_address=0x2000000\0"	\
+@@ -259,8 +258,7 @@
+ 			"echo Copying Linux from SD to RAM... && " \
+ 			"load mmc 0 ${kernel_load_address} ${kernel_image} && " \
+ 			"load mmc 0 ${devicetree_load_address} ${devicetree_image} && " \
+-			"load mmc 0 ${ramdisk_load_address} ${ramdisk_image} && " \
+-			"bootm ${kernel_load_address} ${ramdisk_load_address} ${devicetree_load_address}; " \
++			"bootm ${kernel_load_address} - ${devicetree_load_address}; " \
+ 		"fi\0" \
+ 	"usbboot=if usb start; then " \
+ 			"run uenvboot; " \
