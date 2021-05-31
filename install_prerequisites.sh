@@ -1,6 +1,6 @@
 apt-get update > /dev/null
 apt-get install -y apt-utils > /dev/null
-apt-get install -y git wget cmake build-essential zsh device-tree-compiler vim-nox \
+apt-get install -y git wget cmake build-essential zsh device-tree-compiler vim-nox  screen \
                        rlwrap libncurses5 libtinfo5 libxrender1 libxtst6 u-boot-tools \ 
                        libglib2.0-0 libsm6 libxi6 libxrender1 libxrandr2 libfreetype6 \
                        libfontconfig iproute2 x11-utils xvfb dbus dbus-x11 libgtk-3-dev > /dev/null

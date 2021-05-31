@@ -55,10 +55,10 @@ make -C linux-digilent -j `nproc`
 make -C linux-digilent UIMAGE_LOADADDR=0x8000 uImage -j `nproc`
 cp linux-digilent/arch/arm/boot/uImage $boot_partition
 
-cp configs/buildroot_config buildroot-2021.02.2/.config
-make -C buildroot-2021.02.2 -j `nproc`
+cp configs/buildroot_config buildroot/.config
+make -C buildroot -j `nproc`
 cd $root_partition
-sudo tar xvf $work_dir/buildroot-2021.02.2/output/images/rootfs.tar
+sudo tar xvf $work_dir/buildroot/output/images/rootfs.tar
 cd $work_dir
 sudo umount $root_partition
 sudo umount $boot_partition

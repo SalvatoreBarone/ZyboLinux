@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2021.02.2 Configuration
+# Buildroot 2021.05-rc2-61-gfe3cb7978a Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -252,6 +252,8 @@ BR2_KERNEL_HEADERS_4_4=y
 # BR2_KERNEL_HEADERS_4_19 is not set
 # BR2_KERNEL_HEADERS_5_4 is not set
 # BR2_KERNEL_HEADERS_5_10 is not set
+# BR2_KERNEL_HEADERS_5_11 is not set
+# BR2_KERNEL_HEADERS_5_12 is not set
 # BR2_KERNEL_HEADERS_VERSION is not set
 # BR2_KERNEL_HEADERS_CUSTOM_TARBALL is not set
 # BR2_KERNEL_HEADERS_CUSTOM_GIT is not set
@@ -479,11 +481,11 @@ BR2_PACKAGE_FFMPEG_ARCH_SUPPORTS=y
 BR2_PACKAGE_KODI_ARCH_SUPPORTS=y
 
 #
-# kodi needs python w/ .py modules, a uClibc or glibc toolchain w/ C++, threads, wchar, dynamic library, gcc >= 4.8
+# kodi needs python3 w/ .py modules, a uClibc or glibc toolchain w/ C++, threads, wchar, dynamic library, gcc >= 4.9
 #
 
 #
-# kodi needs an OpenGL EGL backend with OpenGL support
+# kodi needs an OpenGL EGL backend with OpenGL or GLES support
 #
 # BR2_PACKAGE_LAME is not set
 # BR2_PACKAGE_MADPLAY is not set
@@ -694,6 +696,8 @@ BR2_PACKAGE_TCF_AGENT_ARCH_SUPPORTS=y
 BR2_PACKAGE_TRINITY_ARCH_SUPPORTS=y
 # BR2_PACKAGE_TRINITY is not set
 # BR2_PACKAGE_UCLIBC_NG_TEST is not set
+BR2_PACKAGE_UFTRACE_ARCH_SUPPORTS=y
+# BR2_PACKAGE_UFTRACE is not set
 BR2_PACKAGE_VALGRIND_ARCH_SUPPORTS=y
 # BR2_PACKAGE_VALGRIND is not set
 # BR2_PACKAGE_VMTOUCH is not set
@@ -738,6 +742,7 @@ BR2_PACKAGE_PROVIDES_HOST_GETTEXT="host-gettext-tiny"
 # BR2_PACKAGE_JQ is not set
 # BR2_PACKAGE_LIBTOOL is not set
 BR2_PACKAGE_MAKE=y
+# BR2_PACKAGE_MAWK is not set
 BR2_PACKAGE_PKGCONF=y
 # BR2_PACKAGE_SUBVERSION is not set
 # BR2_PACKAGE_TREE is not set
@@ -787,6 +792,10 @@ BR2_PACKAGE_PKGCONF=y
 # BR2_PACKAGE_UDFTOOLS is not set
 # BR2_PACKAGE_UNIONFS is not set
 # BR2_PACKAGE_XFSPROGS is not set
+
+#
+# zfs needs a Linux kernel to be built
+#
 
 #
 # Fonts, cursors, icons, sounds and themes
@@ -868,7 +877,7 @@ BR2_PACKAGE_PKGCONF=y
 #
 
 #
-# cage needs udev, mesa3d w/ EGL and GLES support
+# cage needs udev, EGL w/ Wayland backend and OpenGL ES support
 #
 
 #
@@ -1098,7 +1107,6 @@ BR2_PACKAGE_FLASHROM_ARCH_SUPPORTS=y
 # BR2_PACKAGE_HWDATA is not set
 # BR2_PACKAGE_HWLOC is not set
 # BR2_PACKAGE_INPUT_EVENT_DAEMON is not set
-# BR2_PACKAGE_IOSTAT is not set
 # BR2_PACKAGE_IPMITOOL is not set
 # BR2_PACKAGE_IRDA_UTILS is not set
 # BR2_PACKAGE_KBD is not set
@@ -1313,6 +1321,7 @@ BR2_PACKAGE_GAUCHE_ARCH_SUPPORTS=y
 # BR2_PACKAGE_GAUCHE is not set
 # BR2_PACKAGE_GUILE is not set
 # BR2_PACKAGE_HASERL is not set
+# BR2_PACKAGE_JANET is not set
 # BR2_PACKAGE_JIMTCL is not set
 # BR2_PACKAGE_LUA is not set
 BR2_PACKAGE_PROVIDES_HOST_LUAINTERPRETER="host-lua"
@@ -1513,9 +1522,9 @@ BR2_PACKAGE_LIBGPG_ERROR_SYSCFG="arm-unknown-linux-gnueabi"
 # BR2_PACKAGE_LIBSSH2 is not set
 # BR2_PACKAGE_LIBTOMCRYPT is not set
 # BR2_PACKAGE_LIBUECC is not set
+# BR2_PACKAGE_LIBXCRYPT is not set
 # BR2_PACKAGE_MBEDTLS is not set
 # BR2_PACKAGE_NETTLE is not set
-BR2_PACKAGE_LIBOPENSSL_ARCH_SUPPORTS=y
 # BR2_PACKAGE_OPENSSL is not set
 BR2_PACKAGE_PROVIDES_HOST_OPENSSL="host-libopenssl"
 # BR2_PACKAGE_PKCS11_HELPER is not set
@@ -1558,10 +1567,6 @@ BR2_PACKAGE_MONGODB_ARCH_SUPPORTS=y
 #
 # BR2_PACKAGE_POSTGRESQL is not set
 # BR2_PACKAGE_REDIS is not set
-
-#
-# rocksdb needs a toolchain w/ C++, threads, wchar, gcc >= 4.8
-#
 # BR2_PACKAGE_SQLCIPHER is not set
 # BR2_PACKAGE_SQLITE is not set
 # BR2_PACKAGE_UNIXODBC is not set
@@ -1588,7 +1593,7 @@ BR2_PACKAGE_MONGODB_ARCH_SUPPORTS=y
 #
 
 #
-# assimp needs a toolchain w/ C++, wchar
+# assimp needs libzlib
 #
 
 #
@@ -1609,7 +1614,7 @@ BR2_PACKAGE_MONGODB_ARCH_SUPPORTS=y
 #
 
 #
-# bullet needs a toolchain w/ C++
+# bullet needs a toolchain w/ C++, dynamic library, threads, wchar
 #
 # BR2_PACKAGE_CAIRO is not set
 
@@ -1753,10 +1758,7 @@ BR2_PACKAGE_JPEG_SIMD_SUPPORT=y
 #
 # pangomm needs a toolchain w/ C++, wchar, threads, gcc >= 4.9
 #
-
-#
-# pipewire needs udev and a toolchain w/ threads, headers >= 3.18
-#
+# BR2_PACKAGE_PIPEWIRE is not set
 # BR2_PACKAGE_PIXMAN is not set
 
 #
@@ -1772,7 +1774,7 @@ BR2_PACKAGE_WEBKITGTK_ARCH_SUPPORTS=y
 # BR2_PACKAGE_WEBP is not set
 
 #
-# wlroots needs udev, mesa3d w/ EGL and GLES support
+# wlroots needs udev, EGL w/ Wayland backend and OpenGL ES support
 #
 
 #
@@ -1866,6 +1868,10 @@ BR2_PACKAGE_GNU_EFI_ARCH_SUPPORTS=y
 # libpri needs a kernel to be built
 #
 # BR2_PACKAGE_LIBQMI is not set
+
+#
+# libqrtr-glib needs a toolchain w/ wchar, threads, headers >= 4.15
+#
 # BR2_PACKAGE_LIBRAW1394 is not set
 # BR2_PACKAGE_LIBRTLSDR is not set
 
@@ -2021,6 +2027,10 @@ BR2_PACKAGE_SPIDERMONKEY_JIT_ARCH_SUPPORTS=y
 
 #
 # log4cxx needs a toolchain w/ C++, threads, dynamic library
+#
+
+#
+# log4qt needs qt5
 #
 
 #
@@ -2334,6 +2344,7 @@ BR2_PACKAGE_CANFESTIVAL_ARCH_SUPPORTS=y
 # restclient-cpp needs a toolchain w/ C++, gcc >= 4.8
 #
 # BR2_PACKAGE_RTMPDUMP is not set
+# BR2_PACKAGE_SIPROXD is not set
 # BR2_PACKAGE_SLIRP is not set
 
 #
@@ -2621,7 +2632,11 @@ BR2_PACKAGE_PROTOBUF_ARCH_SUPPORTS=y
 #
 
 #
-# qhull needs a toolchain w/ C++, dynamic library, gcc >= 4.4
+# protozero needs a toolchain w/ C++,  gcc >= 4.7
+#
+
+#
+# qhull needs a toolchain w/ C++, gcc >= 4.4
 #
 # BR2_PACKAGE_QLIBC is not set
 
@@ -2729,7 +2744,7 @@ BR2_PACKAGE_BITCOIN_ARCH_SUPPORTS=y
 # BR2_PACKAGE_COLLECTL is not set
 
 #
-# domoticz needs lua 5.3 and a toolchain w/ C++, gcc >= 4.8, NPTL, wchar, dynamic library
+# domoticz needs lua 5.3 and a toolchain w/ C++, gcc >= 6, NPTL, wchar, dynamic library
 #
 # BR2_PACKAGE_EMPTY is not set
 
@@ -2868,7 +2883,7 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_FRR is not set
 
 #
-# gerbera needs a toolchain w/ C++, threads, wchar, gcc >= 8
+# gerbera needs a toolchain w/ C++, dynamic library, threads, wchar, gcc >= 8
 #
 # BR2_PACKAGE_GESFTPSERVER is not set
 
@@ -2970,7 +2985,6 @@ BR2_PACKAGE_MONGREL2_LIBC_SUPPORTS=y
 #
 # mongrel2 needs a uClibc or glibc toolchain w/ C++, threads, dynamic library
 #
-# BR2_PACKAGE_MONKEY is not set
 
 #
 # mosh needs a toolchain w/ C++, threads, dynamic library, wchar, gcc >= 4.8
@@ -3190,6 +3204,7 @@ BR2_PACKAGE_MONGREL2_LIBC_SUPPORTS=y
 # -------------------------------------------------------
 #
 # BR2_PACKAGE_OPKG is not set
+# BR2_PACKAGE_OPKG_UTILS is not set
 
 #
 # Real-Time
@@ -3284,6 +3299,10 @@ BR2_PACKAGE_AUDIT_ARCH_SUPPORTS=y
 #
 # circus needs Python 3 and a toolchain w/ C++, threads
 #
+
+#
+# containerd needs a glibc or musl toolchain w/ threads
+#
 # BR2_PACKAGE_CPULOAD is not set
 # BR2_PACKAGE_DAEMON is not set
 # BR2_PACKAGE_DC3DD is not set
@@ -3295,10 +3314,6 @@ BR2_PACKAGE_AUDIT_ARCH_SUPPORTS=y
 
 #
 # docker-compose needs a toolchain w/ C++, wchar, threads, dynamic library
-#
-
-#
-# docker-containerd needs a glibc or musl toolchain w/ threads
 #
 
 #
@@ -3451,6 +3466,7 @@ BR2_TARGET_GRUB2_ARCH_SUPPORTS=y
 # BR2_TARGET_MXS_BOOTLETS is not set
 # BR2_TARGET_OPTEE_OS is not set
 # BR2_TARGET_S500_BOOTLOADER is not set
+# BR2_TARGET_SHIM is not set
 # BR2_TARGET_UBOOT is not set
 
 #
@@ -3560,12 +3576,25 @@ BR2_PACKAGE_HOST_TI_CGT_PRU_ARCH_SUPPORTS=y
 #
 
 #
-# Legacy options removed in 2021.02
+# Legacy options removed in 2021.05
 #
+# BR2_PACKAGE_UDISKS_LVM2 is not set
+# BR2_PACKAGE_LVM2_APP_LIBRARY is not set
+# BR2_PACKAGE_LVM2_LVMETAD is not set
+# BR2_PACKAGE_MONKEY is not set
+# BR2_PACKAGE_DOCKER_CONTAINERD is not set
+# BR2_PACKAGE_IOSTAT is not set
 # BR2_PACKAGE_SCONESERVER_HTTP_SCONESITE_IMAGE is not set
 # BR2_PACKAGE_XSERVER_XORG_SERVER_KDRIVE_EVDEV is not set
 # BR2_PACKAGE_XSERVER_XORG_SERVER_KDRIVE_KBD is not set
 # BR2_PACKAGE_XSERVER_XORG_SERVER_KDRIVE_MOUSE is not set
+# BR2_PACKAGE_MESA3D_OSMESA_CLASSIC is not set
+# BR2_PACKAGE_MESA3D_DRI_DRIVER_SWRAST is not set
+# BR2_PACKAGE_KODI_SCREENSAVER_CRYSTALMORPH is not set
+
+#
+# Legacy options removed in 2021.02
+#
 # BR2_PACKAGE_MPD_AUDIOFILE is not set
 # BR2_PACKAGE_AUDIOFILE is not set
 # BR2_BINUTILS_VERSION_2_33_X is not set
